@@ -20,6 +20,8 @@ function addTodo(e) {
     newTodo.innerText = todoInput.value;
     newTodo.classList.add('todo-item');
     todoDiv.appendChild(newTodo);
+    // ADD TODO TO LOCAL STORAGE
+    saveLocalTodos(todoInput.value);
     // CHECKMARK BUTTON
     const completedButton = document.createElement('button');
     completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -89,4 +91,5 @@ function saveLocalTodos(todo){
     } 
     todos.push(todo);
     localStorage.setItem('todos', JSON.stringify(todos));
+
 }
